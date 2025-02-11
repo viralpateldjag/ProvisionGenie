@@ -45,7 +45,9 @@ if ($ValidateLocation.Count -eq 0) {
     exit 1
 }
 
-$appId = az ad app list --query "[?displayName=='$AadAppName'].appId | [0]"
+#$appId = az ad app list --query "[?displayName=='$AadAppName'].appId | [0]"
+
+$appId = "7377194b-2940-493b-99a6-01de57494565"
 if ($null -eq $appId) {
     Write-Error "$AadAppName does not exist. Double check that you have run Create-AadAppRegistration.ps1 as documented before deploying the Dataverse tables and running this script."
     exit 1
